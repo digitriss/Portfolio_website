@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 80px;
+    margin-right: 5vw;
+    right: 0;
+  }
+}

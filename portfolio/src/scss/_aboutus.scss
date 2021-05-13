@@ -1,0 +1,33 @@
+.about-us {
+  display: flex;
+  height: 930px;
+  background: $color-whitish;
+
+  &__container {
+    padding: 100px 0px;
+    flex-basis: 50%;
+  }
+
+  &__wrap {
+    position: relative;
+
+    p {
+      margin: 50px;
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    img {
+      position: absolute;
+      right: 100px;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    background-image: url("../assets/People.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-basis: 50%;
+  }
+}

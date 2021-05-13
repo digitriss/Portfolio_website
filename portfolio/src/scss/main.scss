@@ -1,0 +1,27 @@
+@import "./reset.scss";
+@import "./elements/logo";
+@import "./settings/colors";
+@import "./settings/fonts";
+@import "./elements/buttons";
+@import "./settings/mixins";
+@import "./homethreecolumns";
+@import "./header";
+@import "./welcome";
+@import "./homesteps";
+@import "./aboutus";
+@import "./whowehelp";
+@import "./contact";
+@import "./footer";
+@import "./login";
+@import "./register";
+@import "./elements/nav";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: $font-base;
+  max-width: 1900px;
+  text-align: center;
+  color: $color-primary;
+}

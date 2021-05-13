@@ -1,0 +1,9 @@
+@mixin link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  // border: 2px solid transparent;
+}

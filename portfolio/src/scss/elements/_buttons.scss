@@ -1,0 +1,15 @@
+.btn {
+  display: inline-block;
+  width: 310px;
+  height: 120px;
+  text-transform: uppercase;
+  color: $color-primary;
+  font-size: 36px;
+  line-height: 40px;
+  padding: 13px 50px;
+  margin: 20px;
+  border: 1px solid $color-primary;
+  text-decoration: none;
+  text-align: center;
+  background-color: inherit;
+}

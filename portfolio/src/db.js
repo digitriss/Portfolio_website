@@ -1,0 +1,140 @@
+export const dataBase = {
+  foundations: [
+    {
+      id: 1,
+      name: "Fundacja “Dbam o Zdrowie”",
+      desc: "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+      items: "ubrania, jedzenie, sprzęt AGD, meble, zabawki",
+    },
+    {
+      id: 2,
+      name: "Fundacja: “Dla dzieci”",
+      desc: "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
+      items: "ubrania, meble, zabawki",
+    },
+    {
+      id: 3,
+      name: "Fundacja: “Bez domu”",
+      desc: "Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.",
+      items: "ubrania, jedzenie, ciepłe koce",
+    },
+    {
+      id: 4,
+      name: "Fundacja: “4“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 5,
+      name: "Fundacja: “5“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 6,
+      name: "Fundacja: “6“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 7,
+      name: "Fundacja: “7",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+  ],
+  organizations: [
+    {
+      id: 1,
+      name: "Organizacja: “1“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 2,
+      name: "Organizacja: “2“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 3,
+      name: "Organizacja: “3“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 4,
+      name: "Organizacja: “4“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 5,
+      name: "Organizacja: “5“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 6,
+      name: "Organizacja: “6“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 7,
+      name: "Organizacja: “7“",
+      desc: "Cel i misja: lorem ipsum",
+      name: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 8,
+      name: "Organizacja: “8“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+  ],
+  fundraisings: [
+    {
+      id: 1,
+      name: "Zbiórka: “1“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 2,
+      name: "Zbiórka: “2“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 3,
+      name: "Zbiórka: “3“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 4,
+      name: "Zbiórka: “4“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 5,
+      name: "Zbiórka: “5“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 6,
+      name: "Zbiórka: “6“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+    {
+      id: 7,
+      name: "Zbiórka: “7“",
+      desc: "Cel i misja: lorem ipsum",
+      items: "dolor sit amet consectetur adipisicing elit",
+    },
+  ],
+};

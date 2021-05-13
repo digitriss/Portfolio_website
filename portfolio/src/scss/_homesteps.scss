@@ -1,0 +1,33 @@
+.home-steps {
+  margin-bottom: 50px;
+  width: 100%;
+
+  &__container {
+    width: 100%;
+    background-color: $color-whitish;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    height: 280px;
+    max-width: 1400px;
+    margin: 0 auto 40px;
+    padding: 50px;
+  }
+
+  &__wrap {
+    flex-basis: 15%;
+    h4 {
+      font-size: 18px;
+    }
+    .line {
+      display: inline-block;
+      content: none;
+      width: 100px;
+      background-color: $color-primary;
+      border: 1px solid $color-primary;
+      margin: 20px 0;
+    }
+  }
+}

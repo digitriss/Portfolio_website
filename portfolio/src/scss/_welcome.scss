@@ -1,0 +1,22 @@
+.welcome {
+  height: 100vh;
+  background-image: url("../assets/Home-Hero-Image.jpg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: -60% bottom;
+
+  &__container {
+    width: 50%;
+    margin-left: 35%;
+    margin-right: 10%;
+    margin-top: 150px;
+  }
+
+  &__buttons {
+    margin-top: 40px;
+
+    .btn-element {
+      margin: 20px;
+    }
+  }
+}
