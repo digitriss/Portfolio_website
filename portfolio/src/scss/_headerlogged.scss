@@ -1,0 +1,13 @@
+.logged {
+  ul {
+    position: relative;
+
+    li {
+      position: absolute;
+      transform: rotate(90deg);
+      border: 1px solid $color-primary;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
