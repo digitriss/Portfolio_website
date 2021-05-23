@@ -19,18 +19,18 @@ export const SignUp = () => {
         console.log(res);
       })
       .catch((err) => {
-        setErrors(err);
+        console.log(err);
       });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== passwordConf) {
+      console.log("Hasła są różne");
       return setErrors("Hasła są różne");
     }
     console.log("handleSubmit");
-    await signup();
-    history.push("/");
+    await signup(email, password);
   };
 
   return (
@@ -38,12 +38,12 @@ export const SignUp = () => {
       <section className="register">
         <Nav />
         <Logo text={"Zarejestruj się"} />
-        <form className="register__form" onSumbit={handleSubmit}>
+        <form className="register__form" onSubmit={(e) => handleSubmit(e)}>
           <label>Email</label>
           <input
             type="text"
             name="email"
-            onChang={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <label>Hasło</label>
           <input
@@ -58,6 +58,7 @@ export const SignUp = () => {
             name="password"
             onChange={(e) => setPasswordConf(e.target.value)}
           />
+          <button>Zarejestruj</button>
         </form>
         <div className="register__links">
           <Link to="/login" className="register__links__button">
