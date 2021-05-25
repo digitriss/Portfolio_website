@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
 export const LoginPanel = () => {
   //spytaj firebase czy uzytkownik jest zalogowany
+
   const user = auth.currentUser;
   console.log("current user", user);
   return (
@@ -10,7 +11,9 @@ export const LoginPanel = () => {
       {user !== null ? (
         <div>
           <p>{user.email}</p>
-          <p>Wyloguj się</p>
+          <Link to="/logout">
+            <p>Wyloguj się</p>
+          </Link>
         </div>
       ) : (
         <ul className="header__login" id="login">

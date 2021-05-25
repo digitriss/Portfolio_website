@@ -1,4 +1,4 @@
-.login {
+.registration {
   margin: 40px 100px 0;
 
   &__list {
@@ -25,11 +25,12 @@
     flex-direction: column;
     justify-content: space-between;
     margin: 0 auto 50px;
-    width: 380px;
-    height: 240px;
+    width: 385px;
+    height: 330px;
     background-color: $color-whitish;
     padding: 40px 60px;
     text-align: left;
+    font-weight: 600;
 
     input[type="text"],
     input[type="password"] {
@@ -37,6 +38,10 @@
       border-bottom: 1px solid $color-primary;
       width: 100%;
       background-color: $color-whitish;
+    }
+    p {
+      color: #ff0000;
+      font-size: 14px;
     }
   }
 

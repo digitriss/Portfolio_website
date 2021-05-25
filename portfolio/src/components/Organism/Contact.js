@@ -45,6 +45,7 @@ export const Contact = () => {
   const submitForm = (e) => {
     e.preventDefault();
     const result = validation(form);
+    console.log(result);
     result.ok ? sendServerResponse() : setErrors(result);
   };
 
