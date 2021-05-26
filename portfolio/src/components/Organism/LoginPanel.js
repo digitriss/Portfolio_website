@@ -1,19 +1,24 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
 export const LoginPanel = () => {
+  const history = useHistory();
   //spytaj firebase czy uzytkownik jest zalogowany
-
   const user = auth.currentUser;
   console.log("current user", user);
+  const logout = () => {
+    auth.signOut();
+    history.push("/logout");
+  };
   return (
     <>
       {user !== null ? (
         <div>
           <p>{user.email}</p>
-          <Link to="/logout">
+          <p onClick={logout}>Wyloguj się</p>
+          {/* <Link to="/logout">
             <p>Wyloguj się</p>
-          </Link>
+          </Link> */}
         </div>
       ) : (
         <ul className="header__login" id="login">

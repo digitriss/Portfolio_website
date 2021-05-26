@@ -30,27 +30,33 @@ export const validation = (form) => {
   return errors;
 };
 
-export const validationAuth = (email, password, passwordConf) => {
+export const validateForm = (
+  setErrors,
+  email,
+  password,
+  passwordConf,
+  errors
+) => {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const errors = {
-    emailError: "",
-    passwordError: "",
-    passwordConfError: "",
-  };
-
   if (!re.test(String(email).toLowerCase())) {
-    errors.emailError = "Podany email jest nieprawidłowy";
+    setErrors((prevState) => ({
+      ...prevState,
+      emailError: "Email jest nieprawidłowy",
+    }));
   }
-
-  if (password.length < 6) {
-    errors.passwordError = "Hasło musi mieć co najmniej 6 znaków";
-  }
-
   if (password !== passwordConf) {
-    errors.passwordConfError = "Hasła się różnią!";
+    setErrors((prevState) => ({
+      ...prevState,
+      passwordConfError: "Hasła są różne",
+    }));
   }
-
+  if (password.length < 6) {
+    setErrors((prevState) => ({
+      ...prevState,
+      passwordError: "Hasło musi mieć conajmniej 6 znaków",
+    }));
+  }
   if (
     !errors.emailError &&
     !errors.passwordError &&
@@ -58,5 +64,5 @@ export const validationAuth = (email, password, passwordConf) => {
   ) {
     return true;
   }
-  return errors;
+  return false;
 };

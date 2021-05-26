@@ -4,7 +4,7 @@ import { Nav } from "../Molecules/Nav";
 import { Logo } from "../Atoms/Logo";
 import { auth } from "../../firebase/firebase";
 import { useHistory } from "react-router-dom";
-import { validationAuth } from "../API/validation";
+import { validateForm } from "../API/validation";
 
 export const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -16,38 +16,20 @@ export const SignUp = () => {
     passwordConfError: "",
   });
   const [existAccount, setExistAccount] = useState("");
-
-  const handleSubmit = (e) => {
+  const history = useHistory();
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const re =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!re.test(String(email).toLowerCase())) {
-      setErrors((prevState) => ({
-        ...prevState,
-        emailError: "Email jest nieprawidłowy",
-      }));
-    }
-    if (password !== passwordConf) {
-      setErrors((prevState) => ({
-        ...prevState,
-        passwordConfError: "Hasła są różne",
-      }));
-    }
-    if (password.length < 6) {
-      setErrors((prevState) => ({
-        ...prevState,
-        passwordError: "Hasło musi mieć conajmniej 6 znaków",
-      }));
-    }
-    // nie wiem jak ten warunek powinien wygladac
-    // if (
-    //   !errors.emailError &&
-    //   !errors.passwordError &&
-    //   !errors.passwordConfError
-    // ) {
-    // }
-    else {
-      auth
+
+    const result = validateForm(
+      setErrors,
+      email,
+      password,
+      passwordConf,
+      errors
+    );
+
+    if (result) {
+      await auth
         .createUserWithEmailAndPassword(email, password)
         .then((res) => {
           setErrors({
@@ -56,6 +38,7 @@ export const SignUp = () => {
             passwordConfError: "",
           });
           console.log("server response", res);
+          history.push("/");
         })
         .catch((err) => {
           if (err.code === "auth/email-already-in-use") {
@@ -66,115 +49,51 @@ export const SignUp = () => {
               passwordConfError: "",
             });
           }
-          console.log("error", err);
+          console.log("error", err, email, password);
         });
+    } else {
+      console.log("False");
     }
   };
 
   return (
     <>
-      <section className="registration">
+      <section className="signup">
         <Nav />
         <Logo text={"Zarejestruj się"} />
-        <form className="registration__form" onSubmit={(e) => handleSubmit(e)}>
+        <form className="signup__form" onSubmit={(e) => handleSubmit(e)}>
           <label>Email</label>
           <input
             type="text"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <p>{errors.emailError}</p>
-          <p>{existAccount}</p>
+          <p className="signup__form__errors">{errors.emailError}</p>
+          <p className="signup__form__errors">{existAccount}</p>
           <label>Hasło</label>
           <input
             type="password"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <p> {errors.passwordError}</p>
+          <p className="signup__form__errors"> {errors.passwordError}</p>
           <label>Powtórz hasło</label>
           <input
             type="password"
             name="passwordConf"
             onChange={(e) => setPasswordConf(e.target.value)}
           />
-          <p> {errors.passwordConfError}</p>
-          <button>Zarejestruj</button>
+          <p className="signup__form__errors">{errors.passwordConfError}</p>
+          <div className="signup__links">
+            <Link to="/signup" className="login__links__button">
+              Zaloguj się
+            </Link>
+            <button className="signup__links__button" type="sumbit">
+              Załóż konto
+            </button>
+          </div>
         </form>
-        <div className="registration__links">
-          <Link to="/login" className="register__links__button">
-            <p>Zaloguj się</p>
-          </Link>
-          <Link to="/" className="registration__links__button">
-            <p>Załóż konto</p>
-          </Link>
-        </div>
       </section>
     </>
   );
 };
-
-// const history = useHistory();
-
-// const signup = (email, password) => {
-//   auth
-//     .createUserWithEmailAndPassword(email, password)
-//     .then(async (res) => {
-//       setErrors("");
-//       console.log(res);
-//     })
-//     .catch((err) => {
-//       if (err.code === "auth/email-already-in-use") {
-//         setExistAccount("Konto już istnieje");
-//       }
-//     });
-// };
-
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   const result = validationAuth(form);
-//   result ? signup(form.email, form.password) : setErrors(result);
-//   console.log(signup(form.email, form.password));
-// };
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   const re =
-//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//   if (!re.test(String(email).toLowerCase())) {
-//     setErrors((p) => ({
-//       ...p,
-//       emailError: "Podany email jest nieprawidłowy",
-//     }));
-//     console.log(errors.emailError);
-//   } else {
-//     setErrors((p) => ({
-//       ...p,
-//       emailError: "",
-//     }));
-//   }
-//   if (password.length < 6 && password === "") {
-//     setErrors((p) => ({
-//       ...p,
-//       passwordError: "Hasło musi mieć co najmniej 6 znaków",
-//     }));
-//   } else {
-//     setErrors((p) => ({
-//       ...p,
-//       passwordError: "",
-//     }));
-//   }
-//   if (password !== passwordConf && passwordConf === "") {
-//     setErrors((p) => ({ ...p, passwordConfError: "Hasła się różnią!" }));
-//     console.log(errors, "errors");
-//   } else {
-//     setErrors((p) => ({ ...p, passwordConfError: "" }));
-//   }
-//   if (
-//     errors.emailError === "" &&
-//     errors.passwordError === "" &&
-//     errors.passwordConfError === ""
-//   ) {
-//     await signup();
-//     console.log(errors);
-//   }
-// };
