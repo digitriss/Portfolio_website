@@ -20,13 +20,13 @@ export const HomeSteps = () => {
               <p>ubrania, zabawki, sprzęt i inne</p>
             </div>
             <div className="home-steps__wrap">
-              <img src={Icon2} />
+              <img src={Icon2} alt="icon2" />
               <h4>Spakuj je</h4>
               <div className="line"></div>
               <p>skorzystaj z worków na śmieci</p>
             </div>
             <div className="home-steps__wrap">
-              <img src={Icon3} />
+              <img src={Icon3} alt="icon3" />
               <h4>
                 Zdecyduj komu <br />
                 chcesz pomóc
@@ -35,7 +35,7 @@ export const HomeSteps = () => {
               <p>wybierz zaufane miejsce</p>
             </div>
             <div className="home-steps__wrap">
-              <img src={Icon4} />
+              <img src={Icon4} alt="icon4" />
               <h4>Zamów kuriera</h4>
               <div className="line"></div>
               <p>kurier przyjdzie w dogodnym momencie</p>
