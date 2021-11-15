@@ -6,8 +6,8 @@ export const Footer = () => {
     <footer className="footer">
       <p>Copright by CodersLab</p>
       <div className="icons">
-        <img src={Facebook} />
-        <img src={Instagram} />
+        <img src={Facebook} alt="facebook" />
+        <img src={Instagram} alt="instagram" />
       </div>
     </footer>
   );

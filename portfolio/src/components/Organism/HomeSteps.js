@@ -14,7 +14,7 @@ export const HomeSteps = () => {
         <div className="home-steps__container">
           <div className="home-steps__main">
             <div className="home-steps__wrap">
-              <img src={Icon1} />
+              <img src={Icon1} alt="icon1" />
               <h4>Wybiesz rzeczy</h4>
               <div className="line"></div>
               <p>ubrania, zabawki, sprzęt i inne</p>
