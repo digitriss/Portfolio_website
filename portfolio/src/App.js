@@ -4,7 +4,7 @@ import { Login } from "./components/Organism/Login";
 import { Logout } from "./components/Organism/Logout";
 import { SignUp } from "./components/Organism/SignUp";
 import { Form } from "./components/Organism/Form";
-import { GiveThings } from "./components/Organism/GiveThings";
+import { Logged } from "./components/Organism/Logged";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
         <Route path="/form" component={Form} />
-        <Route path="/give" component={GiveThings} />
+        <Route path="/give" component={Logged} />
       </Switch>
     </Router>
   );
