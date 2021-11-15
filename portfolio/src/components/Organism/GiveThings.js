@@ -6,6 +6,7 @@ export const GiveThings = () => {
     <>
       <Nav />
       <Logo text={"Oddaj rzeczy których już nie chcesz potrzebującym"} />
+      <div>Wystarczą cztery proste kroki</div>
     </>
   );
 };
